@@ -1,0 +1,6 @@
+      [paste.app_factory]
+      main = pycku:main
+      [console_scripts]
+      populate_pycku = pycku.scripts.populate:main
+      pycku_newapp = pycku.scripts.newapp:main
+      
