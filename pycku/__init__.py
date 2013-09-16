@@ -1,4 +1,4 @@
-import sys
+
 import os
 from pyramid.config import Configurator
 from pyramid.session import UnencryptedCookieSessionFactoryConfig
@@ -9,7 +9,9 @@ from models import DBSession
 
 import importlib
 from apps import enabled_apps
-
+from pyck.ext import AdminController, add_admin_handler
+from pyck.lib import get_models
+import pycku
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -30,13 +32,17 @@ def main(global_config, **settings):
 
     config.add_route('home', '/')
     config.add_route('contact', '/contact')
+   
+    
 
     config.add_route('pyckauth_login', '/login')
     config.add_route('pyckauth_logout', '/logout')
     config.add_route('pyckauth_manager', '/auth')
     config.add_route('pyckauth_users', '/auth/users')
     config.add_route('pyckauth_permissions', '/auth/permissions')
-    config.add_route('pyckauth_routes', '/auth/routes')
+    config.add_route('pyckauth_routes', '/auth/routes') 
+    add_admin_handler(config, DBSession, get_models(pycku), 'admin', '/admin', AdminController)
+    
 
     configure_app_routes(config)
 
@@ -47,8 +53,8 @@ def main(global_config, **settings):
 
 def load_project_settings():
     here = os.path.dirname(__file__)
-    sys.path.insert(0, here + '/apps')
-    sys.path.insert(0, here)
+    #pycku.path.insert(0, here + '/apps')
+  #  pycku.path.insert(0, here)
 
 
 def configure_app_routes(config):
