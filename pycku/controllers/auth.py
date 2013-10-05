@@ -2,7 +2,7 @@ import hashlib
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
 
-from ..models import DBSession, Permission, User, UserPermission, RoutePermission
+from ..models import DBSession, Permission, User, UserPermission, RoutePermission ,Database
 
 from ..forms import LoginForm, UserForm, PermissionForm, RoutePermissionForm
 from sqlalchemy import func

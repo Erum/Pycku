@@ -32,6 +32,8 @@ def main(global_config, **settings):
 
     config.add_route('home', '/')
     config.add_route('contact', '/contact')
+    config.add_route('insert', '/insert')
+    config.add_route('structure', '/structure')
    
     
 

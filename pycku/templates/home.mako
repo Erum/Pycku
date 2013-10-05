@@ -50,6 +50,9 @@ PyCK Web Development Framework
             <li>
               <a href="http://compulife.com.pk/oss/pyck">PyCK Website</a>
             </li>
+             <li>
+              <a href="http://0.0.0.0:6543/insert">insert</a>
+            </li>
             <li>
               <a href="http://packages.python.org/PyCK/">Documentation</a>
             </li>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +69,9 @@
 <%def name="main_menu()">
 <p>
   <a href="${request.route_url('home')}">Home</a> |
-  <a href="${request.route_url('contact')}">Contact Us</a>
+  <a href="${request.route_url('contact')}">Contact Us </a>|
+  <a href="${request.route_url('insert')}">insert</a> |
+   <a href="${request.route_url('structure')}">structure</a> 
 </p>
 </%def>
 <%def name="footer()">
@@ -76,4 +79,3 @@
     <div class="footer">&copy; Copyright 2008-2012, Set your company name here</div>
   </div>
 </%def>
-
