@@ -48,11 +48,13 @@ pycku/static/usernamefield.png
 pycku/templates/base.mako
 pycku/templates/contact.mako
 pycku/templates/home.mako
+pycku/templates/insert.mako
 pycku/templates/pyckauth_base.mako
 pycku/templates/pyckauth_login.mako
 pycku/templates/pyckauth_manager.mako
 pycku/templates/pyckauth_permissions.mako
 pycku/templates/pyckauth_routes.mako
 pycku/templates/pyckauth_users.mako
+pycku/templates/structure.mako
 pycku/tests/__init__.py
 pycku/tests/tests.py

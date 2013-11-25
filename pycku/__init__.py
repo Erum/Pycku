@@ -34,8 +34,8 @@ def main(global_config, **settings):
     config.add_route('contact', '/contact')
     config.add_route('insert', '/insert')
     config.add_route('structure', '/structure')
-   
-    
+    config.add_route('manage_db', '/manage/{dbname}')
+    config.add_route('manage_table', '/manage/{dbname}/{tablename}')
 
     config.add_route('pyckauth_login', '/login')
     config.add_route('pyckauth_logout', '/logout')
@@ -44,7 +44,7 @@ def main(global_config, **settings):
     config.add_route('pyckauth_permissions', '/auth/permissions')
     config.add_route('pyckauth_routes', '/auth/routes') 
     add_admin_handler(config, DBSession, get_models(pycku), 'admin', '/admin', AdminController)
-    
+
 
     configure_app_routes(config)
 

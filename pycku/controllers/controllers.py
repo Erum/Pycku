@@ -7,7 +7,7 @@ from ..models import (
     )
 
 from ..forms import ContactForm
-
+from ..lib import structure
 
 @view_config(route_name='home', renderer='home.mako')
 def my_view(request):
@@ -29,24 +29,32 @@ def contact_form(request):
 
     return {'contact_form': f}
 
+
 @view_config(route_name='insert', renderer='insert.mako')
 def insert(request):
     one = None
     return {'one': one, 'project': 'pycku'}
-    
-    
+
+
+@view_config(route_name='manage_db', renderer='managedb.mako')
+def manage_db(request):
+    dbname = request.matchdict['dbname']
+    engine = structure.get_db_engine(dbname)
+    tablenames = structure.get_tablenames(engine)
+
+    return {'dbname': dbname, 'tablenames': tablenames, 'db_engine': engine}
+
+
+@view_config(route_name='manage_table', renderer='managetable.mako')
+def manage_table(request):
+    dbname = request.matchdict['dbname']
+    tablename = request.matchdict['tablename']
+    engine = structure.get_db_engine(dbname)
+    tablenames = structure.get_tablenames(engine)
+
+    return {'dbname': dbname, 'tablenames': tablenames, 'db_engine': engine}
+
 @view_config(route_name='structure', renderer='structure.mako')
-def structure(request):
+def structure_view(request):
     one = None
     return {'one': one, 'project': 'pycku'}
-username = 'pycku'
-password = 'pheonix'
-host = 'localhost'
-database = 'database'
-db_type = 'mySQL'
-conn_string = "mySQL://pycku:pheonix@localhost/database".format(db_type=db_type, username=username, password=password, host=host, database=database)
-conn_string
-'mySQL://pycku:pheonix@localhost/database'
-engine = create_engine(conn_string)
-engine.table_names()
-[u'database']
