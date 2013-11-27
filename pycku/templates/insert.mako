@@ -26,8 +26,8 @@
 <div id="header" style="background-color:#EEEEEE;" align=center>
 <table >
      <tr>
-          <td><a href="Structure.html">Structure</a></td>
-		  <td><a href="Insert.html">Insert</a></td>
+          <td><a href="Structure.mako">Structure</a></td>
+		  <td><a href="Insert.mako">Insert</a></td>
 	 </tr>
 
     </table>

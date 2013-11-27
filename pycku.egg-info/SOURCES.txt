@@ -21,6 +21,8 @@ pycku/controllers/controllers.py
 pycku/forms/__init__.py
 pycku/forms/auth.py
 pycku/forms/contact.py
+pycku/lib/__init__.py
+pycku/lib/structure.py
 pycku/models/__init__.py
 pycku/models/auth.py
 pycku/models/models.py
@@ -49,6 +51,8 @@ pycku/templates/base.mako
 pycku/templates/contact.mako
 pycku/templates/home.mako
 pycku/templates/insert.mako
+pycku/templates/manage_base.mako
+pycku/templates/managedb.mako
 pycku/templates/pyckauth_base.mako
 pycku/templates/pyckauth_login.mako
 pycku/templates/pyckauth_manager.mako
