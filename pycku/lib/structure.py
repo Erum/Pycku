@@ -1,17 +1,6 @@
 from sqlalchemy import create_engine
 from ..models import DBSession, Database
-#username = 'pycku'
-#password = 'pheonix'
-#host = 'localhost'
-#database = 'database'
-#db_type = 'mySQL'
-#conn_string = "mySQL://pycku:pheonix@localhost/database".format(db_type=db_type, username=username, password=password, host=host, database=database)
-#conn_string
-#'mySQL://pycku:pheonix@localhost/database'
-#engine = create_engine(conn_string)
-#engine.table_names()
-#[u'database']
-
+from sqlalchemy import MetaData
 
 def get_db_engine(dbname):
     db = DBSession.query(Database).filter_by(db_name=dbname).first()
@@ -30,3 +19,8 @@ def get_db_engine(dbname):
 
 def get_tablenames(engine):
     return sorted(engine.table_names())
+
+def get_table(t_name, engine):
+    meta = MetaData(bind=engine)                                                                                                                                                
+    meta.reflect()                                                                                                                                                                   
+    return(meta.tables[t_name])                                                                                                                                        

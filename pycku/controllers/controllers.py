@@ -51,10 +51,14 @@ def manage_table(request):
     tablename = request.matchdict['tablename']
     engine = structure.get_db_engine(dbname)
     tablenames = structure.get_tablenames(engine)
+    table = structure.get_table(tablename, engine)
 
-    return {'dbname': dbname, 'tablenames': tablenames, 'db_engine': engine}
+    return {'dbname': dbname, 'tablenames': tablenames, 'db_engine': engine,
+            'table': table}
 
 @view_config(route_name='structure', renderer='structure.mako')
 def structure_view(request):
-    one = None
-    return {'one': one, 'project': 'pycku'}
+    e=structure.get_db_engine(dbname) 
+    tnames=structure.get_tablenames(e)
+    t=structure.get_table(t_name, engine)
+    return {'dbname': dbname,'db_engine': e,'tablenames':tnames}

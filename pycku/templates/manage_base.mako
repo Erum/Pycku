@@ -48,6 +48,7 @@ Database Manager - ${dbname}
             %endfor
             
         </td>
+ s
         <td style="padding: 20px;">
         ${self.body()}
         </td>

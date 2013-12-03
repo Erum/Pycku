@@ -1,4 +1,4 @@
-
+<%inherit file="manage_base.mako"/>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +15,7 @@
 <b>PYCKU</b><br>
 
    <dl >
-      <dt>Table 1</dt>
+      <dt>table</dt>
       <dt>Table 2</dt>
       <dt>Table 3</dt>
       <dt>Table 4</dt>
@@ -26,8 +26,8 @@
 <div id="header" style="background-color:#EEEEEE;" align=center>
 <table >
      <tr>
-          <td><a href="Structure.html">Structure</a></td>
-		  <td><a href="Insert.html">Insert</a></td>
+          <td><a href="Structure.mako">Structure</a></td>
+		  <td><a href="Insert.mako">Insert</a></td>
 	 </tr>
 
     </table>
@@ -59,7 +59,20 @@
 		 </td>
 		 <td></td>
 		 <td>
-		  Browse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strcuture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop
+		  Browse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
+                 %for c in table.columns:
+        <tr class="${loop.cycle('oddrow', 'evenrow')}">
+            
+             <td>$(c.name)</td>
+               <td>$(c.type)</td>
+                 <td>$(c.primary_key)</td>
+                  <td>$(c.default)</td>
+            
+        </tr>
+    %endfor
+    
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop
 		 </td>
 		 <td>
 		 from db
