@@ -18,6 +18,7 @@ pycku/apps/__init__.py
 pycku/controllers/__init__.py
 pycku/controllers/auth.py
 pycku/controllers/controllers.py
+pycku/forms/Add.py
 pycku/forms/__init__.py
 pycku/forms/auth.py
 pycku/forms/contact.py
@@ -47,12 +48,14 @@ pycku/static/pyck.css
 pycku/static/pyck.png
 pycku/static/transparent.gif
 pycku/static/usernamefield.png
+pycku/templates/add.mako
 pycku/templates/base.mako
 pycku/templates/contact.mako
 pycku/templates/home.mako
 pycku/templates/insert.mako
 pycku/templates/manage_base.mako
 pycku/templates/managedb.mako
+pycku/templates/managetable.mako
 pycku/templates/pyckauth_base.mako
 pycku/templates/pyckauth_login.mako
 pycku/templates/pyckauth_manager.mako
