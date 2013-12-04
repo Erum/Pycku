@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from ..models import DBSession, Database
 from sqlalchemy import MetaData
 
+
 def get_db_engine(dbname):
     db = DBSession.query(Database).filter_by(db_name=dbname).first()
     if not db:
@@ -23,4 +24,11 @@ def get_tablenames(engine):
 def get_table(t_name, engine):
     meta = MetaData(bind=engine)                                                                                                                                                
     meta.reflect()                                                                                                                                                                   
-    return(meta.tables[t_name])                                                                                                                                        
+    return(meta.tables[t_name]) 
+    
+def get_db_session( engine):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    myobject = MyObject('foo', 'bar')
+    session.add(myobject)
+    session.commit()

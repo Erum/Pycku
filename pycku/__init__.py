@@ -36,7 +36,7 @@ def main(global_config, **settings):
     config.add_route('structure', '/structure')
     config.add_route('manage_db', '/manage/{dbname}')
     config.add_route('manage_table', '/manage/{dbname}/{tablename}')
-
+    config.add_route('addcol', '/manage/{dbname}/{tablename}/addcol')
     config.add_route('pyckauth_login', '/login')
     config.add_route('pyckauth_logout', '/logout')
     config.add_route('pyckauth_manager', '/auth')
